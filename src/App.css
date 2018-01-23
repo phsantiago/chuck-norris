@@ -1,0 +1,13 @@
+.App {
+  min-height: 100vh;
+  background-color: aqua;
+  background-image: radial-gradient( rgba(0, 0, 0, 0) 30%, #00000038 100%);
+}
+
+.chuckImg {
+  max-width: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
