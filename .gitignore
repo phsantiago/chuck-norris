@@ -21,4 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # VIM
-*.swp
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
