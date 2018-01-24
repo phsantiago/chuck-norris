@@ -9,8 +9,6 @@
 
 .chuckImg {
   max-width: 100%;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
+  position: relative;
+  bottom: -5px;
 }
