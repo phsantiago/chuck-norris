@@ -8,7 +8,12 @@ class Categories extends Component {
     className: PropTypes.string,
     list: PropTypes.arrayOf(PropTypes.string),
     onChoose: PropTypes.func,
+    fetchCategories: PropTypes.func,
   };
+
+  componentDidMount() {
+    this.props.fetchCategories();
+  }
 
   render() {
     return (
