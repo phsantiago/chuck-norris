@@ -1,10 +1,12 @@
 :global(body) {
   margin: 0;
+  font-family: 'Nunito', sans-serif;
 }
 .App {
   min-height: 100vh;
   background-color: aqua;
   background-image: radial-gradient( rgba(0, 0, 0, 0) 30%, #00000038 100%);
+  position: relative;
 }
 
 .chuckImg {
