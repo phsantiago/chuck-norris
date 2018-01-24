@@ -1,0 +1,11 @@
+.listHolder {
+  padding: 0;
+  text-align: center;
+}
+.listItem {
+  text-transform: uppercase;
+  padding: 11px 0;
+  cursor: pointer;
+  color: #373737;
+  font-weight: bolder;
+}
