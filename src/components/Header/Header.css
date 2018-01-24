@@ -1,0 +1,22 @@
+.base {
+  display: inline-block;
+  width: 100%;
+}
+.txtBg{
+  width: 260px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  background-color: #000;
+  color: #fff;
+  padding: 6px;
+  margin-bottom: 9px;
+}
+.ic {
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid;
+  padding: 8px;
+  margin: 20px auto;
+  display: block;
+}
