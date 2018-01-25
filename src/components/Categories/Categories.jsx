@@ -23,16 +23,30 @@ class Categories extends Component {
     this.props.fetchCategories();
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      screen: 0,
+    };
+  }
+
+  back() {
+    this.setState({ screen: 0 });
+  }
+
   render() {
     return (
       <div className={styles.base}>
-        { this.props.choosen.length > 1 ||
+        { this.state.screen === 0 &&
           <ul className={styles.listHolder}>
             {
               this.props.list.map((cat, i) => (
                 <li
                   className={styles.listItem}
-                  onClick={() => this.props.onChoose(cat)}
+                  onClick={() => {
+                    this.setState({ screen: 1 });
+                    this.props.onChoose(cat);
+                  }}
                   key={i}>
                   { cat }
                 </li>
@@ -40,15 +54,15 @@ class Categories extends Component {
             }
           </ul>
         }
-        { this.props.choosen.length === 0 ||
+        { this.state.screen === 1 &&
           <Fragment>
+            <Fact />
             <h6
-              onClick={() => this.props.onChoose('')}
+              onClick={() => this.back()}
               className={styles.back}
             >
               Choose new one
             </h6>
-            <Fact />
           </Fragment>
         }
       </div>
