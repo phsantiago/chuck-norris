@@ -1,31 +1,27 @@
-const CHOOSE_THEME = 'chuck-norris/CHOOSE_THEME';
-const REQUEST_LIST = 'chuck-norris/REQUEST_LIST';
-const RECEIVE_LIST = 'chuck-norris/RECEIVE_LIST';
-const ERROR_LIST = 'chuck-norris/ERROR_LIST';
+const REQUEST_FACT = 'chuck-norris/REQUEST_FACT';
+const RECEIVE_FACT = 'chuck-norris/RECEIVE_FACT';
+const ERROR_FACT = 'chuck-norris/ERROR_FACT';
 
 const defaultState = {
-  list: [],
-  theme: '',
+  text: '',
 };
 
 export default function reducer(state = defaultState, action) {
   switch (action.type) {
-    case CHOOSE_THEME:
-      return { ...state, theme: action.theme };
-    case RECEIVE_LIST:
-      return { ...state, list: action.payload };
+    case REQUEST_FACT:
+      return { ...state, text: 'loading...' };
+    case RECEIVE_FACT:
+      return { ...state, text: action.payload };
     default:
       return state;
   }
 }
 
-export const setTheme = theme => ({ type: CHOOSE_THEME, theme });
+export const requestList = () => ({ type: REQUEST_FACT });
 
-export const requestList = () => ({ type: REQUEST_LIST });
+export const factSuccess = factData => ({ type: RECEIVE_FACT, payload: factData.value });
 
-export const listSuccess = listData => ({ type: RECEIVE_LIST, payload: listData });
-
-export const listError = errData => ({ type: ERROR_LIST, data: errData });
+export const factError = errData => ({ type: ERROR_FACT, data: errData });
 
 export const fetchFact = () => (
   (dispatch, getState) => {
@@ -38,10 +34,10 @@ export const fetchFact = () => (
         return res.json();
       })
       .then((res) => {
-        dispatch(listSuccess(res));
+        dispatch(factSuccess(res));
       })
       .catch((err) => {
-        dispatch(listError(err));
+        dispatch(factError(err));
       });
   }
 );

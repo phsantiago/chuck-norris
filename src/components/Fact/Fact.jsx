@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './Fact.css';
 
 function Fact({ ...props }) {
-  props.fetchFact();
   return (
     <div className={styles.base}>
       {props.children}

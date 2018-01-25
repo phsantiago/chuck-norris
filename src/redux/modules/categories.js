@@ -1,3 +1,5 @@
+import { fetchFact } from './fact';
+
 const CHOOSE_THEME = 'chuck-norris/CHOOSE_THEME';
 const REQUEST_LIST = 'chuck-norris/REQUEST_LIST';
 const RECEIVE_LIST = 'chuck-norris/RECEIVE_LIST';
@@ -14,12 +16,19 @@ export default function reducer(state = defaultState, action) {
       return { ...state, theme: action.theme };
     case RECEIVE_LIST:
       return { ...state, list: action.payload };
+    case REQUEST_LIST:
+      return { ...state, list: ['loading...'] };
     default:
       return state;
   }
 }
 
-export const setTheme = theme => ({ type: CHOOSE_THEME, theme });
+export const setTheme = theme => (
+  (dispatch) => {
+    dispatch(fetchFact());
+    dispatch({ type: CHOOSE_THEME, theme });
+  }
+);
 
 export const requestList = () => ({ type: REQUEST_LIST });
 

@@ -8,7 +8,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  list: ['ssdsd', 'asasas'],
+  list: state.categories.list,
   choosen: state.categories.theme,
 });
 

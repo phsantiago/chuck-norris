@@ -1,0 +1,8 @@
+.base {
+  text-align: center;
+  margin: 40px auto 0;
+  max-width: 500px;
+  font-weight: bolder;
+  margin-top: 40px;
+  padding: 0 25px;
+}
