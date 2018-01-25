@@ -3,7 +3,6 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import Header from './components/Header/Header.jsx';
 import Categories from './containers/Categories/Categories';
-import Fact from './containers/Fact/Fact';
 import createStore from './redux';
 import chuck from './img/chuck-norris.png';
 import styles from './App.css';
@@ -16,7 +15,7 @@ const App = () => (
         <div>
           <div className={styles.App}>
             <Header />
-            <Categories onChoose={a => alert(a)} list={['explicit', 'dev', 'movie', 'food', 'celebrity', 'science', 'sport', 'political', 'religion', 'animal', 'history', 'music', 'travel', 'career', 'money', 'fashion']}/>
+            <Categories />
             <img src={chuck} className={styles.chuckImg} alt="" />
           </div>
         </div>

@@ -14,3 +14,11 @@
   position: relative;
   bottom: -5px;
 }
+
+@media screen and (min-width: 400px) {
+  .chuckImg {
+    max-width: 360px;
+    margin: 0 auto;
+    display: block;
+  }
+}
