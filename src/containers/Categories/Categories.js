@@ -8,7 +8,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  list: state.categories.list,
+  list: ['ssdsd', 'asasas'],
+  choosen: state.categories.theme,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);
